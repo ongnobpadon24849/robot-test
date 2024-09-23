@@ -40,7 +40,7 @@ Test Calculate Numbers 8.4 and 4 (ฺBefore Using Keywords)
     ${json_resp}=    Set Variable  ${resp.json()}
 
     # Verify the response of plus operation
-    Should Be Equal    ${json_resp['plus']}    ${12}
+    Should Be Equal    ${json_resp['plus']}    ${12.4}
 
 
 Test Calculate Numbers 4 and 2
@@ -56,4 +56,4 @@ Test Calculate Numbers 8.4 and 4
     ${json_resp}=    Get Calculation JSON    ${8.4}    ${4}
 
     # Verify the response of plus operation
-    Should Be Equal    ${json_resp['plus']}    ${12}
+    Should Be Equal    ${json_resp['plus']}    ${12.4}
