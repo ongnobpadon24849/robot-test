@@ -30,7 +30,7 @@ Test Calculate Numbers word and 4 (Before Using Keywords)
     ${resp}=     GET    http://127.0.0.1:8080/plus/word/4
     Should Be Equal    ${resp.status_code}    ${200}
     ${json_resp}=    Set Variable  ${resp.json()}
-    Should Be Equal    ${json_resp['plus']}    ${word}
+    Should Be Equal    ${json_resp['error_msg']}    ${'Invalid input'}
 
 Test Calculate Numbers 4 and 2
     ${json_resp}=    Get Calculation JSON    ${4}    ${2}
@@ -42,4 +42,4 @@ Test Calculate Numbers 8.4 and 4
 
 Test Calculate Numbers word and 4
     ${json_resp}=    Get Calculation JSON    ${word}    ${4}
-    Should Be Equal    ${json_resp['plus']}    ${word}
+    Should Be Equal    ${json_resp['error_msg']}    ${'Invalid input'}
